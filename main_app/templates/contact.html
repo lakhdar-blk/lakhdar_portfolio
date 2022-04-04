@@ -1,0 +1,91 @@
+{%  extends 'home.html' %}
+
+{% block content %}
+
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script>
+        if ( window.history.replaceState ) {
+            window.history.replaceState( null, null, window.location.href );
+        }
+</script>
+{% if sentv %}
+    <script>
+        jQuery(function(){
+            jQuery('#hidenb').click();
+        });
+
+        form.target.reset();
+    </script>
+{% endif %}
+
+
+
+<div class="row" style="height: 50px;"></div>
+<div class="container">
+    <div class="row">
+        <form method="POST">
+            {% csrf_token%}
+            <div class="form-group">(*) Required fields</div>
+            <div class="row" style="height: 30px;"></div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Your Email address (*):</label>
+                <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Type your email" required>
+            </div>
+            <div class="row" style="height: 30px;"></div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Your full name (*):</label>
+                <input name="name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Type your full name " required>
+            </div>
+            <div class="row" style="height: 30px;"></div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <label class="input-group-text" for="inputGroupSelect01">Reason:</label>
+                </div>
+                <select name="reason" class="custom-select" id="inputGroupSelect01" required>
+                  <option value="Just a question">Just a question</option>
+                  <option value="To complete a task">To complete a task</option>
+                  <option value="To propose a job">To propose a job</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label ">Your message (*):</label>
+                <textarea name="message" class="form-control" id="exampleFormControlTextarea1" rows="5" style="resize: none;" required></textarea>
+            </div>
+            <div class="form-group" style="height: 20px;"></div>
+            <div class="row" style="text-align: center;">
+                <div class="col"></div>
+                <div class="col"><button type="submit" class="btn btn-primary" id="send">Send</button></div>
+                <div class="col"></div>
+            </div>
+        </form>
+    </div>
+</div>
+ 
+
+<!-- Button trigger modal -->
+  <button id="hidenb" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="display:none">
+    Launch modal
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Hello </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Your Message is sent successfully, you will recieve a response as soon as possible.
+            <br>
+          Regards.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+{% endblock %}

@@ -1,0 +1,29 @@
+{%  extends 'home.html' %}
+
+{% block content %}
+
+<div  class="container">
+    <div class="row" style="text-align: center; height: 50px;"> 
+    </div>
+    <div class="row">
+        
+        <div class="col" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; text-align: justify; font-size: 20px;">
+        Welcome, my name is Lakhdar Belkharroubi and i'm 28 years old. I'm a computer science engineer, and currently i'm Ph.D student in Information and communication technologies.
+        My researches concern the optimization of resources in complex assembly lines using approximate methods such as heurtistics and meta-heuristics. Also, i'm working as an IT developer
+        in a big company in Algeria. My prefered programming language is Python, and i develope web applications with Django framework (like this portfolio). Furthermore, I like to code with
+        other programming languages such as JAVA, C, PHP, JavaScript.
+        <br>
+        In my bachelors carrier, I studied 
+        <br>
+        My research interests are towards evolutionary algorithms, combinatorial problems, artificial intelligence, data science, web scraping, web development, netwroking and security and so on.
+        Please feel free to contact me <a href="{% url 'CONTACT' %}">directly</a> or using one from my <a href="{% url 'SOCIAL' %}">social networks</a>.
+        </div>
+        <div class="col">
+                <img  style="width: 500px;" src="https://media-exp1.licdn.com/dms/image/C5603AQGq8CesC8H-Mg/profile-displayphoto-shrink_400_400/0/1634595224167?e=1654732800&v=beta&t=IQ1viUmy5sp_kwf-usmdWqwYOGx1xA69nAesTUrgoj4" 
+                class="card-img" alt="...">
+        </div>
+
+    </div>
+</div>
+
+ {% endblock %}
